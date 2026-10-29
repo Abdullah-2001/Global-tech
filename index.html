@@ -1,83 +1,629 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Global Tech Marketing | Branding, Digital & Landmark Design</title>
 <meta name="description" content="Global Tech Marketing helps businesses build recognizable brands through strategy, visual identity, digital marketing, web development and landmark branding.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#031a36">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css"><meta name="theme-color" content="#031a36"><link rel="icon" type="image/png" href="assets/img/favicon.png"><link rel="apple-touch-icon" href="assets/img/favicon.png">
-<meta property="og:type" content="website"><meta property="og:title" content="Global Tech Marketing | Branding, Digital & Landmark Design"><meta property="og:description" content="Global Tech Marketing helps businesses build recognizable brands through strategy, visual identity, digital marketing, web development and landmark branding."><meta property="og:image" content="assets/img/globaltech-landmark-branding.webp"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Global Tech Marketing | Branding, Digital & Landmark Design">
+<meta property="og:description" content="Build a brand people remember — strategy, identity, digital and landmark branding.">
+<meta property="og:image" content="assets/img/globaltech-landmark-branding.webp">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Global Tech Marketing","description":"Global Tech Marketing helps businesses build recognizable brands through strategy, visual identity, digital marketing, web development and landmark branding.","email":"globaltechmarketing.co@gmail.com","logo":"assets/img/logo.webp"}</script>
-</head><body><a class="skip" href="#services">Skip to content</a>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --navy:#031a36;--navy2:#062a52;--blue:#073c78;--accent:#2f8cff;--sky:#8bc7ff;
+  --ink:#0b1b2e;--muted:#5a6b80;--line:#dde6f0;--bg:#f3f7fc;--white:#fff;
+  --ok:#12a150;--err:#d93a3a;
+  --r:18px;--shadow:0 10px 30px rgba(7,60,120,.10);--shadow-lg:0 24px 60px rgba(3,26,54,.22);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3{font-family:'Manrope',sans-serif;line-height:1.08;letter-spacing:-.04em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.container{width:min(1180px,92%);margin:0 auto}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--blue);padding:10px 16px;border-radius:8px;z-index:999}
+.skip:focus{left:8px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--sky));z-index:200;transition:width .1s linear}
 
-<nav class="nav"><div class="container nav-inner">
-<a class="nav-brand" href="#home"><img src="assets/img/logo.webp" alt="Global Tech Marketing logo"><span>GLOBAL TECH MARKETING</span></a>
-<div class="links" id="navLinks"><a href="#services">Services</a><a href="#branding">Branding</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div><button class="menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s,box-shadow .3s,backdrop-filter .3s;padding:14px 0}
+.nav.scrolled{background:rgba(3,26,54,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 6px 24px rgba(0,0,0,.25);padding:9px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-brand{display:flex;align-items:center;gap:11px;color:#fff;font-family:'Manrope';font-weight:800;letter-spacing:.06em;font-size:14px}
+.nav-brand img{width:38px;height:38px;object-fit:contain;border-radius:8px}
+.links{display:flex;align-items:center;gap:4px}
+.links a{color:#d6e6fb;font-weight:600;font-size:14.5px;padding:9px 14px;border-radius:999px;transition:.25s}
+.links a:hover,.links a.active{color:#fff;background:rgba(255,255,255,.12)}
+.links a.cta{background:var(--accent);color:#fff;margin-left:6px}
+.links a.cta:hover{background:#4a9cff;transform:translateY(-1px)}
+.menu{display:none;width:44px;height:44px;border-radius:12px;color:#fff;align-items:center;justify-content:center;background:rgba(255,255,255,.1)}
+.menu svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15.5px;transition:transform .25s var(--ease),box-shadow .25s,background .25s;border:1.5px solid transparent;position:relative}
+.btn:hover{transform:translateY(-3px)}
+.btn.primary{background:linear-gradient(135deg,#2f8cff,#1565d8);color:#fff;box-shadow:0 12px 28px rgba(47,140,255,.4)}
+.btn.primary:hover{box-shadow:0 16px 34px rgba(47,140,255,.55)}
+.btn.outline{border-color:rgba(255,255,255,.45);color:#fff}
+.btn.outline:hover{background:rgba(255,255,255,.12)}
+.btn.dark{background:var(--blue);color:#fff}
+.btn.ghost{border-color:var(--line);color:var(--blue);background:#fff}
+.btn[disabled]{opacity:.7;cursor:progress;transform:none}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+
+/* HERO */
+.hero{position:relative;color:#fff;padding:150px 0 110px;overflow:hidden;background:radial-gradient(1100px 600px at 85% -10%,#0d4a93 0%,transparent 60%),radial-gradient(800px 500px at 0% 100%,#0a3a75 0%,transparent 55%),linear-gradient(160deg,#021226,#031a36 55%,#04284f)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(139,199,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(139,199,255,.06) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%)}
+.hero-art{position:absolute;right:-120px;top:40px;width:640px;opacity:.28;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--sky)}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px}
+.section .eyebrow{color:var(--accent)}
+h1{font-size:clamp(42px,6vw,78px);margin:18px 0 20px;font-weight:800}
+h1 span{background:linear-gradient(100deg,#8bc7ff,#2f8cff 60%,#b9dcff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:clamp(16px,1.5vw,19px);color:#c7dcf5;max-width:560px}
+.hero-card{position:relative;border-radius:26px;padding:10px;background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.04));box-shadow:var(--shadow-lg);animation:float 7s ease-in-out infinite}
+.hero-card img{border-radius:18px;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.hero-badge{position:absolute;left:-22px;bottom:34px;background:#fff;color:var(--ink);border-radius:16px;padding:12px 16px;display:flex;gap:11px;align-items:center;box-shadow:var(--shadow-lg);font-size:13.5px;font-weight:600}
+.hero-badge i{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#2f8cff,#073c78);display:grid;place-items:center;color:#fff;font-style:normal}
+@keyframes float{50%{transform:translateY(-12px)}}
+.stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:70px;background:rgba(139,199,255,.18);border-radius:20px;overflow:hidden;border:1px solid rgba(139,199,255,.18)}
+.stat{background:rgba(3,26,54,.7);padding:22px 20px;text-align:center}
+.stat b{display:block;font-family:'Manrope';font-size:clamp(26px,3vw,38px);font-weight:800;color:#fff}
+.stat span{font-size:13.5px;color:#a9c8ec}
+
+/* MARQUEE */
+.marquee{background:#fff;border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:'Manrope';font-weight:800;font-size:19px;color:#9db1c9;letter-spacing:-.02em;white-space:nowrap;display:flex;align-items:center;gap:56px}
+.marquee-track span::after{content:"✦";color:var(--accent);font-size:13px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.section{padding:104px 0}
+.section.white{background:#fff}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:52px}
+.head h2,.about h2,.contact h2{font-size:clamp(34px,4.4vw,56px);margin-top:10px;font-weight:800;color:var(--navy)}
+.head p{color:var(--muted);font-size:17px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s;overflow:hidden}
+.section.white .service{background:var(--bg)}
+.service::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--sky));transition:width .45s var(--ease)}
+.service:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:#bcd6f3}
+.service:hover::after{width:100%}
+.icon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#e5f0ff,#cfe3ff);color:var(--blue);font-family:'Manrope';font-weight:800;font-size:20px;margin-bottom:20px;transition:.35s}
+.service:hover .icon{background:linear-gradient(135deg,#2f8cff,#073c78);color:#fff;transform:rotate(-6deg) scale(1.06)}
+.icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.service h3{font-size:21px;margin-bottom:9px;color:var(--navy)}
+.service p{color:var(--muted);font-size:15.5px}
+.sub-head{margin-top:90px}
+
+/* PACKAGES */
+.service.featured{background:linear-gradient(160deg,#031a36,#0a3a75);border-color:transparent;color:#fff;transform:translateY(-10px)}
+.service.featured h3{color:#fff}.service.featured p{color:#c4d9f2}
+.service.featured .icon{background:rgba(255,255,255,.14);color:#fff}
+.service.featured:hover{transform:translateY(-16px)}
+.tag{position:absolute;right:18px;top:18px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:999px;letter-spacing:.04em}
+
+/* ABOUT */
+.about{background:linear-gradient(160deg,#031a36,#062a52);color:#fff}
+.about h2{color:#fff}
+.about .eyebrow{color:var(--sky)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about p{color:#c3d8f2;margin-top:18px;font-size:17px}
+.about strong{color:#fff}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.value{background:rgba(255,255,255,.06);border:1px solid rgba(139,199,255,.18);border-radius:16px;padding:20px;transition:.3s}
+.value:hover{background:rgba(255,255,255,.11);transform:translateY(-4px)}
+.value b{display:block;font-family:'Manrope';font-size:13px;letter-spacing:.08em;color:var(--sky);margin-bottom:6px}
+.value span{font-size:14.5px;color:#c3d8f2}
+
+/* TYPES */
+.types{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.type{display:flex;align-items:center;gap:11px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px 16px;font-weight:600;font-size:15px;color:var(--navy);transition:.3s}
+.type:hover{background:var(--blue);color:#fff;transform:translateY(-4px);border-color:var(--blue)}
+.type span{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px}
+
+/* PROCESS */
+.process{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 28px 28px;transition:.35s var(--ease)}
+.step:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.step b{font-size:12px;letter-spacing:.14em;color:var(--accent);font-family:'Manrope'}
+.step h3{font-size:22px;margin:10px 0 8px;color:var(--navy)}
+.step p{color:var(--muted);font-size:15.5px}
+.step::after{counter-increment:s;content:"0" counter(s);position:absolute;right:20px;top:10px;font-family:'Manrope';font-weight:800;font-size:64px;color:#eaf2fc;line-height:1;z-index:0;pointer-events:none}
+.step>*{position:relative;z-index:1}
+
+/* PORTFOLIO */
+.portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.work{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.4s var(--ease);box-shadow:0 2px 0 rgba(7,60,120,.03)}
+.work:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.work .thumb{position:relative;overflow:hidden;cursor:zoom-in;aspect-ratio:3/2;background:#dfe9f5}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.work:hover img{transform:scale(1.06)}
+.work .thumb::after{content:"View larger ⤢";position:absolute;right:14px;bottom:14px;background:rgba(3,26,54,.82);color:#fff;font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:999px;opacity:0;transform:translateY(8px);transition:.3s}
+.work:hover .thumb::after{opacity:1;transform:none}
+.work-body{padding:24px 26px 28px}
+.work small{color:var(--accent);font-weight:700;letter-spacing:.14em;font-size:11.5px}
+.work h3{font-size:22px;margin:7px 0 7px;color:var(--navy)}
+.work p{color:var(--muted);font-size:15.5px}
+
+/* BRAND */
+.brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.brand-panel{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.35s}
+.brand-panel:hover{box-shadow:var(--shadow);transform:translateY(-5px)}
+.brand-panel img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.caption{padding:22px 26px 26px}
+.caption h3{font-size:20px;color:var(--navy);margin-bottom:6px}
+.caption p{color:var(--muted);font-size:15.5px}
+
+/* GLOBAL */
+.global{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.global h2{font-family:'Manrope';font-size:clamp(34px,4vw,50px);letter-spacing:-.05em;line-height:1.02;margin:9px 0 0;color:var(--navy)}
+.global ul{list-style:none;margin-top:30px;display:grid;gap:14px}
+.global li{padding:18px 20px 18px 58px;position:relative;background:var(--bg);border:1px solid var(--line);border-radius:14px;color:var(--muted);font-size:15.5px}
+.global li::before{content:"✓";position:absolute;left:18px;top:18px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:700}
+.global li b{display:block;color:var(--navy);font-family:'Manrope';font-size:17px;margin-bottom:2px}
+.globe{width:100%;max-width:440px;margin:auto;animation:float 8s ease-in-out infinite}
+
+/* FAQ */
+.faq{max-width:860px;margin:auto;display:grid;gap:12px}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 24px;transition:.3s}
+.faq details[open]{box-shadow:var(--shadow);border-color:#bcd6f3}
+.faq summary{list-style:none;cursor:pointer;padding:21px 0;font-weight:700;font-size:17.5px;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:20px;color:var(--blue);transition:.3s}
+.faq details[open] summary::after{content:"–";background:var(--accent);color:#fff}
+.faq details p{color:var(--muted);padding:0 0 22px;font-size:16px}
+
+/* CONTACT */
+.contact{background:linear-gradient(160deg,#021226,#031a36 55%,#04284f);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:640px;height:640px;right:-200px;top:-200px;background:radial-gradient(circle,rgba(47,140,255,.28),transparent 65%)}
+.contact h2{color:#fff}
+.contact-box{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.contact-copy{color:#c3d8f2;margin-top:18px;font-size:17px}
+.contact-mail{color:var(--sky);font-weight:700;border-bottom:1px solid rgba(139,199,255,.4)}
+.contact-points{list-style:none;margin-top:26px;display:grid;gap:12px}
+.contact-points li{display:flex;gap:12px;align-items:center;color:#d6e6fb;font-size:15.5px}
+.contact-points li i{font-style:normal;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.contact-form{background:#fff;color:var(--ink);border-radius:24px;padding:32px;box-shadow:var(--shadow-lg)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-weight:700;font-size:13.5px;color:var(--navy)}
+.field input,.field select,.field textarea{font:inherit;font-size:15.5px;padding:14px 15px;border:1.5px solid var(--line);border-radius:12px;background:#f8fbff;color:var(--ink);transition:border-color .2s,box-shadow .2s,background .2s;width:100%}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 4px rgba(47,140,255,.15);background:#fff}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--err);background:#fff6f6}
+.err{color:var(--err);font-size:12.5px;font-weight:600;min-height:0;display:none}
+.field.invalid .err{display:block}
+.count{align-self:flex-end;font-size:12px;color:var(--muted)}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.form-actions{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+.form-note{font-size:13px;color:var(--muted);flex:1;min-width:180px}
+.spinner{width:17px;height:17px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;display:none}
+.btn.loading .spinner{display:inline-block}
+.success{display:none;margin-top:18px;padding:16px 18px;border-radius:14px;background:#e8f8ef;color:#0b6b36;font-weight:600;border:1px solid #b6e6cb}
+.success.show{display:block;animation:pop .4s var(--ease)}
+.success.error{background:#fdeeee;color:#9b1c1c;border-color:#f3c2c2}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}}
+
+/* FOOTER */
+footer{background:#021226;color:#9db8d9;padding:46px 0}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1.2fr;gap:30px;align-items:center}
+.footer-brand{font-family:'Manrope';font-weight:800;color:#fff;letter-spacing:.07em}
+.footer-note{font-size:14px;display:flex;flex-direction:column;gap:4px}
+.footer-links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center}
+.footer-links a{font-size:14.5px;transition:.2s}
+.footer-links a:hover{color:#fff}
+.footer-col.footer-note{align-items:flex-end;text-align:right}
+
+/* FLOATERS */
+.top{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;font-size:20px;box-shadow:0 10px 24px rgba(47,140,255,.5);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;z-index:90}
+.top.show{opacity:1;visibility:visible;transform:none}
+.top:hover{background:#1565d8}
+.wa{position:fixed;left:20px;bottom:20px;z-index:90;background:#fff;color:var(--navy);font-weight:700;font-size:14px;padding:12px 18px;border-radius:999px;box-shadow:var(--shadow);border:1px solid var(--line);display:flex;gap:8px;align-items:center;transition:.3s}
+.wa:hover{transform:translateY(-3px)}
+.lightbox{border:0;background:transparent;max-width:min(1100px,94vw);max-height:90vh;padding:0;margin:auto;overflow:visible}
+.lightbox::backdrop{background:rgba(2,12,26,.88);backdrop-filter:blur(6px)}
+.lightbox img{border-radius:16px;max-height:86vh;width:auto;max-width:100%;margin:auto;box-shadow:var(--shadow-lg)}
+.lightbox button{position:absolute;right:-6px;top:-46px;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--navy);font-size:24px;line-height:1}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:var(--navy);color:#fff;padding:14px 22px;border-radius:14px;font-weight:600;font-size:14.5px;box-shadow:var(--shadow-lg);opacity:0;pointer-events:none;transition:.4s var(--ease);z-index:300;max-width:90vw}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* REVEAL */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}
+
+/* RESPONSIVE */
+@media(max-width:1020px){
+  .hero-grid,.about-grid,.global,.contact-box,.head{grid-template-columns:1fr;gap:34px}
+  .services,.process{grid-template-columns:repeat(2,1fr)}
+  .types{grid-template-columns:repeat(2,1fr)}
+  .hero{padding-top:128px}.hero-art{width:460px;right:-160px}
+  .hero-badge{left:12px}
+  .footer-grid{grid-template-columns:1fr;text-align:center}.footer-links{justify-content:center}.footer-col.footer-note{align-items:center;text-align:center}
+}
+@media(max-width:820px){
+  .menu{display:flex}
+  .links{position:fixed;inset:68px 14px auto 14px;flex-direction:column;align-items:stretch;background:rgba(3,26,54,.97);backdrop-filter:blur(16px);border:1px solid rgba(139,199,255,.2);border-radius:18px;padding:12px;gap:2px;transform:translateY(-14px) scale(.98);opacity:0;visibility:hidden;transition:.3s var(--ease);box-shadow:var(--shadow-lg)}
+  .links.open{transform:none;opacity:1;visibility:visible}
+  .links a{padding:14px 16px;font-size:16px}.links a.cta{margin:6px 0 0;text-align:center}
+}
+@media(max-width:640px){
+  .section{padding:74px 0}
+  .services,.process,.portfolio,.brand-grid,.values,.form-grid,.types{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .service.featured{transform:none}
+  .contact-form{padding:22px}
+  .actions .btn{width:100%}
+  .wa span{display:none}
+  .wa{padding:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<a class="skip" href="#services">Skip to content</a>
+
+<nav class="nav" id="nav"><div class="container nav-inner">
+  <a class="nav-brand" href="#home"><img src="assets/img/logo.webp" alt="Global Tech Marketing logo" width="38" height="38"><span>GLOBAL TECH MARKETING</span></a>
+  <div class="links" id="navLinks">
+    <a href="#services">Services</a><a href="#branding">Branding</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#faq">FAQ</a><a class="cta" href="#contact">Contact Us</a>
+  </div>
+  <button class="menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
 </div></nav>
 
-<header class="hero" id="home"><svg class="hero-art" viewBox="0 0 400 400" fill="none" stroke="#8bc7ff" stroke-width="1" aria-hidden="true"><circle cx="200" cy="200" r="150"/><ellipse cx="200" cy="200" rx="150" ry="55"/><ellipse cx="200" cy="200" rx="150" ry="105"/><ellipse cx="200" cy="200" rx="55" ry="150"/><ellipse cx="200" cy="200" rx="105" ry="150"/><ellipse cx="200" cy="200" rx="195" ry="70" transform="rotate(-24 200 200)" stroke-dasharray="4 6"/><circle cx="335" cy="112" r="6" fill="#8bc7ff"/><circle cx="82" cy="262" r="4" fill="#8bc7ff"/></svg><div class="container hero-grid"><div>
-<div class="eyebrow">Branding • Digital • Landmark Design</div><h1>Build a brand people <span>remember.</span></h1>
-<p class="hero-copy">We create complete brand experiences—from strategy and visual identity to websites, campaigns and high-visibility physical branding that turns businesses into recognizable names.</p>
-<div class="actions"><a class="btn primary" href="#branding">Build My Brand</a><a class="btn outline" href="#contact">Get a Free Brand Consultation</a></div>
-</div><div class="hero-card"><img src="assets/img/globaltech-landmark-branding.webp" width="1400" height="933" fetchpriority="high" alt="Global Tech Marketing branded landmark concept"></div></div></header>
+<header class="hero" id="home">
+  <svg class="hero-art" viewBox="0 0 400 400" fill="none" stroke="#8bc7ff" stroke-width="1" aria-hidden="true"><circle cx="200" cy="200" r="150"/><ellipse cx="200" cy="200" rx="150" ry="55"/><ellipse cx="200" cy="200" rx="150" ry="105"/><ellipse cx="200" cy="200" rx="55" ry="150"/><ellipse cx="200" cy="200" rx="105" ry="150"/><ellipse cx="200" cy="200" rx="195" ry="70" transform="rotate(-24 200 200)" stroke-dasharray="4 6"/><circle cx="335" cy="112" r="6" fill="#8bc7ff"/><circle cx="82" cy="262" r="4" fill="#8bc7ff"/></svg>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Branding • Digital • Landmark Design</div>
+        <h1>Build a brand people <span>remember.</span></h1>
+        <p class="hero-copy">We create complete brand experiences—from strategy and visual identity to websites, campaigns and high-visibility physical branding that turns businesses into recognizable names.</p>
+        <div class="actions"><a class="btn primary" href="#branding">Build My Brand →</a><a class="btn outline" href="#contact">Get a Free Brand Consultation</a></div>
+      </div>
+      <div class="hero-card reveal d2">
+        <img src="assets/img/globaltech-landmark-branding.webp" width="1400" height="933" fetchpriority="high" alt="Global Tech Marketing branded landmark concept">
+        <div class="hero-badge"><i>★</i><div>Concept → Build<br><span style="color:var(--muted);font-weight:500">One team, start to finish</span></div></div>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b data-count="6">0</b><span>Stage project process</span></div>
+      <div class="stat"><b>24/7</b><span>Day &amp; night visibility</span></div>
+      <div class="stat"><b data-count="12">0</b><span>Branding &amp; landmark services</span></div>
+      <div class="stat"><b>Global</b><span>Remote-first collaboration</span></div>
+    </div>
+  </div>
+</header>
 
-<section class="section white"><div class="container"><div class="head"><div><div class="eyebrow">What we create</div><h2>Brands built for<br>visibility & growth.</h2></div><p>From brand strategy and identity to digital execution and physical landmark branding, we help businesses present one recognizable story across every customer touchpoint.</p></div>
-<div class="services" id="services">
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Brand Strategy</h3><p>Positioning, audience definition, brand messaging and a clear identity direction built around your business goals.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg></div><h3>Logo & Visual Identity</h3><p>Professional logos, color systems, typography, brand guidelines and visual assets that make your business instantly recognizable.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h10v17M15 9h4v12M9 8h2M9 12h2M9 16h2"/></svg></div><h3>Corporate Branding</h3><p>Business cards, stationery, presentations, proposals, social templates, signage and complete corporate brand systems.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Digital Brand Presence</h3><p>Websites, landing pages, social media creative and digital campaigns designed to turn attention into qualified enquiries.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="9"/><path d="M9 13v8M15 13v8"/></svg></div><h3>Physical & Outdoor Branding</h3><p>Office signage, building facades, hoardings, vehicle branding, event displays and high-visibility outdoor brand applications.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-6-6-11a6 6 0 0112 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></div><h3>Landmark Branding</h3><p>Transform roundabouts, gateways, junctions and public spaces into memorable brand assets with architectural visualization and execution support.</p></article>
-</div>
-<div style="height:18px"></div>
-<div class="head" style="margin-top:55px"><div><div class="eyebrow">Landmark solutions</div><h2>Make your brand<br>part of the city.</h2></div><p>We also create branded environments for companies, housing societies, developers, institutions and sponsors seeking a stronger physical presence.</p></div>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3z"/><path d="M12 3v17"/></svg></div><h3>Landmark Design</h3><p>Distinctive concepts that represent the identity, culture, vision and character of a city, organization, housing society or commercial destination.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Roundabout Design & Beautification</h3><p>Transform ordinary roundabouts with architectural structures, sculptures, branding elements, landscaping and premium lighting.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M9 6l3-3 3 3"/></svg></div><h3>Cross Road & Junction Development</h3><p>Impactful structures for major crossroads and junctions that improve visual identity and create a strong sense of place.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10a8 8 0 0116 0v11M9 21v-6a3 3 0 016 0v6"/></svg></div><h3>Gateway & Entrance Landmarks</h3><p>Impressive entrances for cities, housing societies, commercial projects, industrial zones and major developments.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 00-4-10z"/></svg></div><h3>Architectural & Night Illumination</h3><p>Lighting concepts that keep landmarks visible and impressive during both day and night, creating 24/7 visibility.</p></article>
-<article class="service"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-6"/><path d="M12 3c4 3 6 6 0 12-6-6-4-9 0-12z"/></svg></div><h3>Landscaping & Surrounding Development</h3><p>Architecture combined with greenery, hardscape elements and sustainable solutions to create a complete environment.</p></article>
-</div></div></section>
+<div class="marquee" aria-hidden="true"><div class="marquee-track">
+  <span>Vital Tea</span><span>NBP — The Nation's Bank</span><span>Peek Freans</span><span>Time Medico</span><span>Housing Societies</span><span>City Gateways</span>
+  <span>Vital Tea</span><span>NBP — The Nation's Bank</span><span>Peek Freans</span><span>Time Medico</span><span>Housing Societies</span><span>City Gateways</span>
+</div></div>
 
-<section class="section" id="branding"><div class="container"><div class="head"><div><div class="eyebrow">Branding that wins attention</div><h2>Turn your business<br>into a brand.</h2></div><p>We don't stop at a logo. We build a practical brand system that your sales team can use everywhere—online, in print, on buildings and in the real world.</p></div><div class="services"><article class="service"><div class="icon">A</div><h3>Launch Package</h3><p>Brand strategy, logo refinement, colors, typography, business card, letterhead, social templates and a starter brand guide.</p></article><article class="service"><div class="icon">B</div><h3>Growth Package</h3><p>Everything in the launch system plus website/landing page direction, social content templates, campaign creative and sales collateral.</p></article><article class="service"><div class="icon">C</div><h3>Corporate Brand System</h3><p>A complete scalable identity for established companies: guidelines, stationery, presentations, signage, digital assets and brand governance.</p></article></div><div class="actions" style="margin-top:28px"><a class="btn" style="background:var(--blue);color:#fff" href="#contact">Request a Brand Consultation →</a><a class="btn" style="border:1px solid var(--line);color:var(--blue)" href="#projects">See Brand Projects</a></div></div></section>
+<section class="section white"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">What we create</div><h2>Brands built for<br>visibility &amp; growth.</h2></div><p>From brand strategy and identity to digital execution and physical landmark branding, we help businesses present one recognizable story across every customer touchpoint.</p></div>
+  <div class="services" id="services">
+    <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Brand Strategy</h3><p>Positioning, audience definition, brand messaging and a clear identity direction built around your business goals.</p></article>
+    <article class="service reveal d1"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg></div><h3>Logo &amp; Visual Identity</h3><p>Professional logos, color systems, typography, brand guidelines and visual assets that make your business instantly recognizable.</p></article>
+    <article class="service reveal d2"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h10v17M15 9h4v12M9 8h2M9 12h2M9 16h2"/></svg></div><h3>Corporate Branding</h3><p>Business cards, stationery, presentations, proposals, social templates, signage and complete corporate brand systems.</p></article>
+    <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div><h3>Digital Brand Presence</h3><p>Websites, landing pages, social media creative and digital campaigns designed to turn attention into qualified enquiries.</p></article>
+    <article class="service reveal d1"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="9"/><path d="M9 13v8M15 13v8"/></svg></div><h3>Physical &amp; Outdoor Branding</h3><p>Office signage, building facades, hoardings, vehicle branding, event displays and high-visibility outdoor brand applications.</p></article>
+    <article class="service reveal d2"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-6-6-11a6 6 0 0112 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg></div><h3>Landmark Branding</h3><p>Transform roundabouts, gateways, junctions and public spaces into memorable brand assets with architectural visualization and execution support.</p></article>
+  </div>
 
-<section class="section about" id="about"><div class="container about-grid"><div><div class="eyebrow">About Global Tech Marketing</div><h2>Building identity into every landmark.</h2><p>We believe that a landmark is more than a structure. It represents a location, tells a story, creates recognition and leaves a lasting impression on everyone who passes by.</p><p>Our team combines <strong>creative design, architectural visualization, branding, construction planning, lighting and landscaping</strong> to deliver complete landmark solutions.</p><p>Whether it is a roundabout, cross-road junction, city entrance, commercial destination, housing society or public space, we create designs that are functional, visually powerful and built to be remembered.</p></div>
-<div class="values"><div class="value"><b>ICONIC DESIGN</b><span>Unique concepts designed specifically for your location and vision.</span></div><div class="value"><b>COMPLETE PROJECT EXECUTION</b><span>From initial concept to final installation, we manage the complete process.</span></div><div class="value"><b>STRATEGIC LOCATION IMPACT</b><span>Designed for roundabouts, crossroads, highways and major entry points.</span></div><div class="value"><b>DAY & NIGHT VISIBILITY</b><span>Premium architectural lighting keeps your landmark working around the clock.</span></div><div class="value"><b>DURABLE CONSTRUCTION</b><span>Practical materials and long-lasting outdoor structures.</span></div><div class="value"><b>CUSTOM BRAND INTEGRATION</b><span>Corporate, city, sponsor or project branding integrated naturally.</span></div></div></div></section>
+  <div class="head sub-head reveal"><div><div class="eyebrow">Landmark solutions</div><h2>Make your brand<br>part of the city.</h2></div><p>We also create branded environments for companies, housing societies, developers, institutions and sponsors seeking a stronger physical presence.</p></div>
+  <div class="services">
+    <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3z"/><path d="M12 3v17"/></svg></div><h3>Landmark Design</h3><p>Distinctive concepts that represent the identity, culture, vision and character of a city, organization, housing society or commercial destination.</p></article>
+    <article class="service reveal d1"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Roundabout Design &amp; Beautification</h3><p>Transform ordinary roundabouts with architectural structures, sculptures, branding elements, landscaping and premium lighting.</p></article>
+    <article class="service reveal d2"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M9 6l3-3 3 3"/></svg></div><h3>Cross Road &amp; Junction Development</h3><p>Impactful structures for major crossroads and junctions that improve visual identity and create a strong sense of place.</p></article>
+    <article class="service reveal"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V10a8 8 0 0116 0v11M9 21v-6a3 3 0 016 0v6"/></svg></div><h3>Gateway &amp; Entrance Landmarks</h3><p>Impressive entrances for cities, housing societies, commercial projects, industrial zones and major developments.</p></article>
+    <article class="service reveal d1"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 00-4-10z"/></svg></div><h3>Architectural &amp; Night Illumination</h3><p>Lighting concepts that keep landmarks visible and impressive during both day and night, creating 24/7 visibility.</p></article>
+    <article class="service reveal d2"><div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-6"/><path d="M12 3c4 3 6 6 0 12-6-6-4-9 0-12z"/></svg></div><h3>Landscaping &amp; Surrounding Development</h3><p>Architecture combined with greenery, hardscape elements and sustainable solutions to create a complete environment.</p></article>
+  </div>
+</div></section>
 
-<section class="section white"><div class="container"><div class="head"><div><div class="eyebrow">Project types</div><h2>Designed for every<br>strategic location.</h2></div><p>Our landmark solutions can be tailored for civic, commercial, corporate and public environments.</p></div>
-<div class="types"><div class="type"><span>✓</span>City Landmarks</div><div class="type"><span>✓</span>Roundabout Monuments</div><div class="type"><span>✓</span>Cross-Road Junction Designs</div><div class="type"><span>✓</span>Housing Society Entrances</div><div class="type"><span>✓</span>Commercial & Corporate Landmarks</div><div class="type"><span>✓</span>Highway & Roadside Installations</div><div class="type"><span>✓</span>City Gateway Structures</div><div class="type"><span>✓</span>Public Space Beautification</div><div class="type"><span>✓</span>Brand-Sponsored Landmarks</div><div class="type"><span>✓</span>Architectural Lighting Projects</div></div></div></section>
+<section class="section" id="branding"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">Branding that wins attention</div><h2>Turn your business<br>into a brand.</h2></div><p>We don't stop at a logo. We build a practical brand system that your sales team can use everywhere—online, in print, on buildings and in the real world.</p></div>
+  <div class="services">
+    <article class="service reveal"><div class="icon">A</div><h3>Launch Package</h3><p>Brand strategy, logo refinement, colors, typography, business card, letterhead, social templates and a starter brand guide.</p></article>
+    <article class="service featured reveal d1"><span class="tag">MOST POPULAR</span><div class="icon">B</div><h3>Growth Package</h3><p>Everything in the launch system plus website/landing page direction, social content templates, campaign creative and sales collateral.</p></article>
+    <article class="service reveal d2"><div class="icon">C</div><h3>Corporate Brand System</h3><p>A complete scalable identity for established companies: guidelines, stationery, presentations, signage, digital assets and brand governance.</p></article>
+  </div>
+  <div class="actions"><a class="btn dark" href="#contact" data-pick="Corporate Branding">Request a Brand Consultation →</a><a class="btn ghost" href="#projects">See Brand Projects</a></div>
+</div></section>
 
-<section class="section" id="process"><div class="container"><div class="head"><div><div class="eyebrow">Our process</div><h2>From concept<br>to completion.</h2></div><p>A structured six-stage process keeps creative vision, engineering and execution aligned.</p></div>
-<div class="process">
-<div class="step"><b>01 — DISCOVER</b><h3>Understand the place.</h3><p>We study the location, surrounding environment, traffic flow, project objectives and brand identity.</p></div>
-<div class="step"><b>02 — CONCEPT & PLANNING</b><h3>Shape the idea.</h3><p>Creative concepts, architectural directions and visualization options are developed around the location.</p></div>
-<div class="step"><b>03 — DESIGN & VISUALIZATION</b><h3>See it before it exists.</h3><p>Detailed 3D visualizations help you understand how the landmark will look in its actual environment.</p></div>
-<div class="step"><b>04 — ENGINEERING & DEVELOPMENT</b><h3>Prepare for reality.</h3><p>The selected concept is prepared for fabrication, structural requirements, materials, lighting and installation.</p></div>
-<div class="step"><b>05 — CONSTRUCTION & INSTALLATION</b><h3>Build the landmark.</h3><p>Our team executes the approved concept and transforms the design into a physical landmark.</p></div>
-<div class="step"><b>06 — ILLUMINATION & HANDOVER</b><h3>Make it shine.</h3><p>Lighting, finishing, landscaping and final details are completed for a landmark ready to make an impact.</p></div>
-</div></div></section>
+<section class="section about" id="about"><div class="container about-grid">
+  <div class="reveal"><div class="eyebrow">About Global Tech Marketing</div><h2>Building identity into every landmark.</h2>
+    <p>We believe that a landmark is more than a structure. It represents a location, tells a story, creates recognition and leaves a lasting impression on everyone who passes by.</p>
+    <p>Our team combines <strong>creative design, architectural visualization, branding, construction planning, lighting and landscaping</strong> to deliver complete landmark solutions.</p>
+    <p>Whether it is a roundabout, cross-road junction, city entrance, commercial destination, housing society or public space, we create designs that are functional, visually powerful and built to be remembered.</p></div>
+  <div class="values">
+    <div class="value reveal"><b>ICONIC DESIGN</b><span>Unique concepts designed specifically for your location and vision.</span></div>
+    <div class="value reveal d1"><b>COMPLETE EXECUTION</b><span>From initial concept to final installation, we manage the complete process.</span></div>
+    <div class="value reveal"><b>STRATEGIC LOCATION IMPACT</b><span>Designed for roundabouts, crossroads, highways and major entry points.</span></div>
+    <div class="value reveal d1"><b>DAY &amp; NIGHT VISIBILITY</b><span>Premium architectural lighting keeps your landmark working around the clock.</span></div>
+    <div class="value reveal"><b>DURABLE CONSTRUCTION</b><span>Practical materials and long-lasting outdoor structures.</span></div>
+    <div class="value reveal d1"><b>CUSTOM BRAND INTEGRATION</b><span>Corporate, city, sponsor or project branding integrated naturally.</span></div>
+  </div>
+</div></section>
 
-<section class="section white" id="projects"><div class="container"><div class="head"><div><div class="eyebrow">Selected landmark concepts</div><h2>Ideas built to<br>define places.</h2></div><p>Our visual concepts show how brands can become memorable physical landmarks in high-visibility urban locations.</p></div>
-<div class="portfolio">
-<article class="work"><img src="assets/img/globaltech-landmark-branding.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Global Tech Marketing branded landmark"><div class="work-body"><small>LANDMARK BRANDING</small><h3>Global Tech Marketing — Branded Landmark</h3><p>A complete example of turning a corporate identity into a high-visibility physical brand experience.</p></div></article>
-<article class="work"><img src="assets/img/vital-tea.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Vital Tea landmark"><div class="work-body"><small>ROUNDABOUT DESIGN</small><h3>Vital Tea — Time Medico</h3><p>A green-and-gold landmark concept designed to create a premium sense of place and strong visibility.</p></div></article>
-<article class="work"><img src="assets/img/nbp.webp" width="1400" height="933" loading="lazy" decoding="async" alt="NBP landmark"><div class="work-body"><small>URBAN PLACEMAKING</small><h3>NBP — The Nation's Bank</h3><p>An illuminated centerpiece that turns a high-traffic junction into a recognizable destination.</p></div></article>
-<article class="work"><img src="assets/img/ebm-peek-freans.webp" width="1400" height="933" loading="lazy" decoding="async" alt="EBM Peek Freans landmark concept"><div class="work-body"><small>BRAND-SPONSORED LANDMARK</small><h3>EBM — Peek Freans</h3><p>A bold, brand-led landmark concept that gives a household name a lasting presence in the cityscape.</p></div></article>
-</div></div></section>
+<section class="section white"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">Project types</div><h2>Designed for every<br>strategic location.</h2></div><p>Our landmark solutions can be tailored for civic, commercial, corporate and public environments.</p></div>
+  <div class="types reveal">
+    <div class="type"><span>✓</span>City Landmarks</div><div class="type"><span>✓</span>Roundabout Monuments</div><div class="type"><span>✓</span>Cross-Road Junction Designs</div><div class="type"><span>✓</span>Housing Society Entrances</div><div class="type"><span>✓</span>Commercial &amp; Corporate Landmarks</div>
+    <div class="type"><span>✓</span>Highway &amp; Roadside Installations</div><div class="type"><span>✓</span>City Gateway Structures</div><div class="type"><span>✓</span>Public Space Beautification</div><div class="type"><span>✓</span>Brand-Sponsored Landmarks</div><div class="type"><span>✓</span>Architectural Lighting Projects</div>
+  </div>
+</div></section>
 
-<section class="section"><div class="container"><div class="head"><div><div class="eyebrow">Brand identity</div><h2>One identity.<br>Every touchpoint.</h2></div><p>Your Global Tech Marketing identity is built around a professional blue, white and silver technology aesthetic.</p></div>
-<div class="brand-grid"><div class="brand-panel"><img src="assets/img/brand-guidelines.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Global Tech Marketing brand guidelines"><div class="caption"><h3>Complete corporate identity</h3><p>Letterhead, business cards, envelope, email signature, invoices, quotations, presentations and social templates.</p></div></div><div class="brand-panel"><img src="assets/img/business-card.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Global Tech Marketing business card"><div class="caption"><h3>Professional brand presence</h3><p>A consistent identity that carries from corporate stationery into digital experiences and landmark presentations.</p></div></div></div></div></section>
+<section class="section" id="process"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">Our process</div><h2>From concept<br>to completion.</h2></div><p>A structured six-stage process keeps creative vision, engineering and execution aligned.</p></div>
+  <div class="process">
+    <div class="step reveal"><b>01 — DISCOVER</b><h3>Understand the place.</h3><p>We study the location, surrounding environment, traffic flow, project objectives and brand identity.</p></div>
+    <div class="step reveal d1"><b>02 — CONCEPT &amp; PLANNING</b><h3>Shape the idea.</h3><p>Creative concepts, architectural directions and visualization options are developed around the location.</p></div>
+    <div class="step reveal d2"><b>03 — DESIGN &amp; VISUALIZATION</b><h3>See it before it exists.</h3><p>Detailed 3D visualizations help you understand how the landmark will look in its actual environment.</p></div>
+    <div class="step reveal"><b>04 — ENGINEERING</b><h3>Prepare for reality.</h3><p>The selected concept is prepared for fabrication, structural requirements, materials, lighting and installation.</p></div>
+    <div class="step reveal d1"><b>05 — CONSTRUCTION</b><h3>Build the landmark.</h3><p>Our team executes the approved concept and transforms the design into a physical landmark.</p></div>
+    <div class="step reveal d2"><b>06 — ILLUMINATION &amp; HANDOVER</b><h3>Make it shine.</h3><p>Lighting, finishing, landscaping and final details are completed for a landmark ready to make an impact.</p></div>
+  </div>
+</div></section>
 
-<section class="section white" id="global"><div class="container global"><div><div class="eyebrow">Working with clients worldwide</div><h2 style="font-family:Manrope;font-size:clamp(34px,4vw,50px);letter-spacing:-.05em;line-height:1.02;margin:9px 0 0">Your location won't slow your project down.</h2><ul><li><b>Remote-first collaboration</b>Discovery calls, concept reviews and approvals happen online, so you can sign off from anywhere.</li><li><b>Visualized before it is built</b>3D renders and brand mock-ups let you see the result before anything is produced.</li><li><b>Planned around your site</b>Where physical delivery is needed, we plan installation around your location, regulations and local contractors.</li></ul></div><svg class="globe" viewBox="0 0 400 400" fill="none" stroke="#073c78" stroke-width="1.2" aria-hidden="true"><circle cx="200" cy="200" r="160" fill="#e7f0fa"/><ellipse cx="200" cy="200" rx="160" ry="60"/><ellipse cx="200" cy="200" rx="160" ry="112"/><ellipse cx="200" cy="200" rx="60" ry="160"/><ellipse cx="200" cy="200" rx="112" ry="160"/><path d="M200 40v320M40 200h320"/><circle cx="262" cy="128" r="8" fill="#073c78"/><circle cx="130" cy="236" r="8" fill="#073c78"/><circle cx="286" cy="250" r="8" fill="#073c78"/><path d="M262 128Q200 70 130 236M130 236Q210 300 286 250M262 128Q300 190 286 250" stroke-dasharray="5 6"/></svg></div></section>
-<section class="section" id="faq"><div class="container"><div class="head"><div><div class="eyebrow">Questions, answered</div><h2>Before you<br>get in touch.</h2></div><p>Straight answers to what new clients ask most.</p></div><div class="faq">
-<details><summary>Can you work with clients outside your own country?</summary><p>Yes. Strategy, design and visualization are delivered online. For physical projects, we plan delivery around your site and local requirements.</p></details>
-<details><summary>What does a project cost?</summary><p>Every project is scoped to its size, location and materials. Send a short brief and we will reply with a clear proposal.</p></details>
-<details><summary>Do you handle both branding and physical landmarks?</summary><p>Yes. One team can take you from brand identity to a finished, illuminated landmark, so the story stays consistent.</p></details>
-<details><summary>What should I send to get started?</summary><p>Your business goals, any existing logo or brand files, and, for landmarks, the location with a few photos or a map pin.</p></details>
-</div></div></section>
-<section class="section contact" id="contact"><div class="container contact-box"><div><div class="eyebrow">Project enquiries</div><h2>Let's build a landmark together.</h2><p class="contact-copy">Need a stronger brand? Share your business goals, current identity, website or physical location and we can recommend a practical branding direction—from identity design to a complete branded environment.</p><p class="contact-copy"><strong>Global Tech Marketing</strong><br>Landmark & Urban Design<br><a class="contact-mail" href="mailto:globaltechmarketing.co@gmail.com">globaltechmarketing.co@gmail.com</a><br><br>We work across concept development, 3D visualization, branding integration, landscaping, illumination, construction planning and installation.</p></div>
-<form class="contact-form" id="projectForm"><div class="form-grid"><div class="field"><label for="name">Your Name *</label><input id="name" name="name" type="text" placeholder="Enter your name" required></div><div class="field"><label for="company">Company / Organization</label><input id="company" name="company" type="text" placeholder="Company name"></div><div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+92 XXX XXXXXXX"></div><div class="field full"><label for="project">Project Type *</label><select id="project" name="project" required><option value="" selected disabled>Select project type</option><option>Brand Strategy & Positioning</option><option>Logo & Visual Identity</option><option>Corporate Branding</option><option>Website & Digital Brand Presence</option><option>Physical / Outdoor Branding</option><option>Landmark Branding</option><option>Landmark Design</option><option>Roundabout Design & Beautification</option><option>Cross Road & Junction Development</option><option>Gateway & Entrance Landmark</option><option>Architectural & Night Illumination</option><option>Landscaping & Surrounding Development</option><option>Other</option></select></div><div class="field full"><label for="location">Project Location</label><input id="location" name="location" type="text" placeholder="City / area / landmark location"></div><div class="field full"><label for="message">Tell Us About Your Project *</label><textarea id="message" name="message" placeholder="Tell us about the location, size, objectives, timeline or any ideas you already have..." required></textarea></div></div><div class="form-actions"><button class="btn primary" type="submit">Send Project Enquiry →</button><span class="form-note">Your email app will open with the enquiry prepared for our team.</span></div><div class="success" id="successMessage">Your enquiry is ready. Please send the email from your email app to complete the enquiry.</div></form></div></section>
+<section class="section white" id="projects"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">Selected landmark concepts</div><h2>Ideas built to<br>define places.</h2></div><p>Our visual concepts show how brands can become memorable physical landmarks in high-visibility urban locations.</p></div>
+  <div class="portfolio">
+    <article class="work reveal"><div class="thumb" tabindex="0" role="button" aria-label="Enlarge image"><img src="assets/img/globaltech-landmark-branding.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Global Tech Marketing branded landmark"></div><div class="work-body"><small>LANDMARK BRANDING</small><h3>Global Tech Marketing — Branded Landmark</h3><p>A complete example of turning a corporate identity into a high-visibility physical brand experience.</p></div></article>
+    <article class="work reveal d1"><div class="thumb" tabindex="0" role="button" aria-label="Enlarge image"><img src="assets/img/vital-tea.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Vital Tea landmark"></div><div class="work-body"><small>ROUNDABOUT DESIGN</small><h3>Vital Tea — Time Medico</h3><p>A green-and-gold landmark concept designed to create a premium sense of place and strong visibility.</p></div></article>
+    <article class="work reveal"><div class="thumb" tabindex="0" role="button" aria-label="Enlarge image"><img src="assets/img/nbp.webp" width="1400" height="933" loading="lazy" decoding="async" alt="NBP landmark"></div><div class="work-body"><small>URBAN PLACEMAKING</small><h3>NBP — The Nation's Bank</h3><p>An illuminated centerpiece that turns a high-traffic junction into a recognizable destination.</p></div></article>
+    <article class="work reveal d1"><div class="thumb" tabindex="0" role="button" aria-label="Enlarge image"><img src="assets/img/ebm-peek-freans.webp" width="1400" height="933" loading="lazy" decoding="async" alt="EBM Peek Freans landmark concept"></div><div class="work-body"><small>BRAND-SPONSORED LANDMARK</small><h3>EBM — Peek Freans</h3><p>A bold, brand-led landmark concept that gives a household name a lasting presence in the cityscape.</p></div></article>
+  </div>
+</div></section>
 
-<footer><div class="container footer-grid"><div class="footer-col"><div class="footer-brand">GLOBAL TECH MARKETING</div><div class="footer-note">Branding • Digital Growth • Landmark Design</div></div><div class="footer-links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div><div class="footer-col footer-note"><a href="mailto:globaltechmarketing.co@gmail.com">globaltechmarketing.co@gmail.com</a><span>© <span id="year">2026</span> Global Tech Marketing. All rights reserved.</span></div></div></footer>
-<button class="top" aria-label="Back to top">↑</button><dialog class="lightbox" id="lightbox"><img alt=""><button aria-label="Close">×</button></dialog>
-</body></html>
+<section class="section"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">Brand identity</div><h2>One identity.<br>Every touchpoint.</h2></div><p>Your Global Tech Marketing identity is built around a professional blue, white and silver technology aesthetic.</p></div>
+  <div class="brand-grid">
+    <div class="brand-panel reveal"><img src="assets/img/brand-guidelines.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Global Tech Marketing brand guidelines"><div class="caption"><h3>Complete corporate identity</h3><p>Letterhead, business cards, envelope, email signature, invoices, quotations, presentations and social templates.</p></div></div>
+    <div class="brand-panel reveal d1"><img src="assets/img/business-card.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Global Tech Marketing business card"><div class="caption"><h3>Professional brand presence</h3><p>A consistent identity that carries from corporate stationery into digital experiences and landmark presentations.</p></div></div>
+  </div>
+</div></section>
+
+<section class="section white" id="global"><div class="container global">
+  <div class="reveal"><div class="eyebrow">Working with clients worldwide</div><h2>Your location won't slow your project down.</h2>
+    <ul>
+      <li><b>Remote-first collaboration</b>Discovery calls, concept reviews and approvals happen online, so you can sign off from anywhere.</li>
+      <li><b>Visualized before it is built</b>3D renders and brand mock-ups let you see the result before anything is produced.</li>
+      <li><b>Planned around your site</b>Where physical delivery is needed, we plan installation around your location, regulations and local contractors.</li>
+    </ul></div>
+  <svg class="globe" viewBox="0 0 400 400" fill="none" stroke="#073c78" stroke-width="1.2" aria-hidden="true"><circle cx="200" cy="200" r="160" fill="#e7f0fa"/><ellipse cx="200" cy="200" rx="160" ry="60"/><ellipse cx="200" cy="200" rx="160" ry="112"/><ellipse cx="200" cy="200" rx="60" ry="160"/><ellipse cx="200" cy="200" rx="112" ry="160"/><path d="M200 40v320M40 200h320"/><circle cx="262" cy="128" r="8" fill="#073c78"/><circle cx="130" cy="236" r="8" fill="#073c78"/><circle cx="286" cy="250" r="8" fill="#073c78"/><path d="M262 128Q200 70 130 236M130 236Q210 300 286 250M262 128Q300 190 286 250" stroke-dasharray="5 6"/></svg>
+</div></section>
+
+<section class="section" id="faq"><div class="container">
+  <div class="head reveal"><div><div class="eyebrow">Questions, answered</div><h2>Before you<br>get in touch.</h2></div><p>Straight answers to what new clients ask most.</p></div>
+  <div class="faq reveal">
+    <details open><summary>Can you work with clients outside your own country?</summary><p>Yes. Strategy, design and visualization are delivered online. For physical projects, we plan delivery around your site and local requirements.</p></details>
+    <details><summary>What does a project cost?</summary><p>Every project is scoped to its size, location and materials. Send a short brief and we will reply with a clear proposal.</p></details>
+    <details><summary>Do you handle both branding and physical landmarks?</summary><p>Yes. One team can take you from brand identity to a finished, illuminated landmark, so the story stays consistent.</p></details>
+    <details><summary>What should I send to get started?</summary><p>Your business goals, any existing logo or brand files, and, for landmarks, the location with a few photos or a map pin.</p></details>
+  </div>
+</div></section>
+
+<section class="section contact" id="contact"><div class="container contact-box">
+  <div class="reveal"><div class="eyebrow">Project enquiries</div><h2>Let's build a landmark together.</h2>
+    <p class="contact-copy">Need a stronger brand? Share your business goals, current identity, website or physical location and we can recommend a practical branding direction—from identity design to a complete branded environment.</p>
+    <ul class="contact-points">
+      <li><i>✉</i><a class="contact-mail" href="mailto:globaltechmarketing.co@gmail.com">globaltechmarketing.co@gmail.com</a></li>
+      <li><i>⚡</i>Reply with a clear proposal after your brief</li>
+      <li><i>🌍</i>Concept, 3D visualization, branding, lighting &amp; installation</li>
+    </ul>
+  </div>
+  <form class="contact-form reveal d1" id="projectForm" novalidate>
+    <div class="form-grid">
+      <div class="field"><label for="name">Your Name *</label><input id="name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required maxlength="100"><span class="err">Please enter your name.</span></div>
+      <div class="field"><label for="company">Company / Organization</label><input id="company" name="company" type="text" placeholder="Company name" autocomplete="organization" maxlength="120"></div>
+      <div class="field"><label for="email">Email *</label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required maxlength="160"><span class="err">Please enter a valid email.</span></div>
+      <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+92 XXX XXXXXXX" autocomplete="tel" maxlength="30"></div>
+      <div class="field full"><label for="project">Project Type *</label>
+        <select id="project" name="project" required><option value="" selected disabled>Select project type</option><option>Brand Strategy &amp; Positioning</option><option>Logo &amp; Visual Identity</option><option>Corporate Branding</option><option>Website &amp; Digital Brand Presence</option><option>Physical / Outdoor Branding</option><option>Landmark Branding</option><option>Landmark Design</option><option>Roundabout Design &amp; Beautification</option><option>Cross Road &amp; Junction Development</option><option>Gateway &amp; Entrance Landmark</option><option>Architectural &amp; Night Illumination</option><option>Landscaping &amp; Surrounding Development</option><option>Other</option></select>
+        <span class="err">Please choose a project type.</span></div>
+      <div class="field full"><label for="location">Project Location</label><input id="location" name="location" type="text" placeholder="City / area / landmark location" maxlength="160"></div>
+      <div class="field full"><label for="message">Tell Us About Your Project *</label><textarea id="message" name="message" placeholder="Tell us about the location, size, objectives, timeline or any ideas you already have..." required minlength="10" maxlength="3000"></textarea><span class="count" id="count">0 / 3000</span><span class="err">Please write at least 10 characters.</span></div>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </div>
+    <div class="form-actions">
+      <button class="btn primary" type="submit" id="submitBtn"><span class="spinner"></span><span id="btnText">Send Project Enquiry →</span></button>
+      <span class="form-note">We reply by email, usually within one business day.</span>
+    </div>
+    <div class="success" id="successMessage" role="status" aria-live="polite"></div>
+  </form>
+</div></section>
+
+<footer><div class="container footer-grid">
+  <div class="footer-col footer-note"><div class="footer-brand">GLOBAL TECH MARKETING</div><div>Branding • Digital Growth • Landmark Design</div></div>
+  <div class="footer-links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div class="footer-col footer-note"><a href="mailto:globaltechmarketing.co@gmail.com">globaltechmarketing.co@gmail.com</a><span>© <span id="year">2026</span> Global Tech Marketing. All rights reserved.</span></div>
+</div></footer>
+
+<a class="wa" href="#contact" aria-label="Start an enquiry">💬 <span>Start an enquiry</span></a>
+<button class="top" id="topBtn" aria-label="Back to top">↑</button>
+<dialog class="lightbox" id="lightbox"><img alt=""><button aria-label="Close">×</button></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ===== EMAIL API CONNECTION =====
+     - server.js us hi domain se chal raha ho (ya website server.js se serve ho): '' rakhein.
+     - API alag domain/server par ho to yahan poora URL likhein, jaise:
+         var API_BASE = 'https://api.aapka-domain.com';
+     - Is file ko seedha double-click karke kholein to local API (localhost:3000) use hoti hai. */
+  var API_BASE = '';
+  if (!API_BASE && location.protocol === 'file:') API_BASE = 'http://localhost:3000';
+  API_BASE = API_BASE.replace(/\/+$/, '');
+
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* year */
+  $('#year').textContent=new Date().getFullYear();
+
+  /* nav: scroll state, progress, back-to-top, active link */
+  var nav=$('#nav'),prog=$('#progress'),topBtn=$('#topBtn');
+  function onScroll(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    nav.classList.toggle('scrolled',y>30);
+    topBtn.classList.toggle('show',y>700);
+    prog.style.width=(h>0?(y/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  /* mobile menu */
+  var menuBtn=$('#menuBtn'),links=$('#navLinks');
+  function setMenu(open){links.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',open?'true':'false')}
+  menuBtn.addEventListener('click',function(e){e.stopPropagation();setMenu(!links.classList.contains('open'))});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')setMenu(false)});
+  document.addEventListener('click',function(e){if(!links.contains(e.target))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  /* active nav link */
+  var navLinks=$$('.links a:not(.cta)');
+  if('IntersectionObserver' in window){
+    var secs=navLinks.map(function(a){return $(a.getAttribute('href'))}).filter(Boolean);
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id)})}
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){spy.observe(s)});
+
+    /* reveal on scroll */
+    var rv=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');rv.unobserve(en.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    $$('.reveal').forEach(function(el){rv.observe(el)});
+
+    /* counters */
+    var co=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(!en.isIntersecting)return;
+        var el=en.target,to=parseInt(el.getAttribute('data-count'),10),t0=null;
+        function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)}
+        requestAnimationFrame(step);co.unobserve(el);
+      });
+    },{threshold:.6});
+    $$('[data-count]').forEach(function(el){co.observe(el)});
+  }else{
+    $$('.reveal').forEach(function(el){el.classList.add('in')});
+    $$('[data-count]').forEach(function(el){el.textContent=el.getAttribute('data-count')});
+  }
+
+  /* lightbox */
+  var lb=$('#lightbox'),lbImg=$('img',lb);
+  function openLb(src,alt){lbImg.src=src;lbImg.alt=alt||'';if(lb.showModal)lb.showModal();else lb.setAttribute('open','')}
+  $$('.work .thumb').forEach(function(t){
+    function go(){var im=$('img',t);openLb(im.currentSrc||im.src,im.alt)}
+    t.addEventListener('click',go);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+  });
+  $('button',lb).addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.close()});
+
+  /* toast */
+  var toast=$('#toast'),tt;
+  function showToast(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},4200)}
+
+  /* preselect project from CTA */
+  $$('[data-pick]').forEach(function(a){a.addEventListener('click',function(){
+    var sel=$('#project'),v=a.getAttribute('data-pick');
+    $$('option',sel).forEach(function(o){if(o.text===v)sel.value=o.value||o.text});
+  })});
+
+  /* ---------- contact form ---------- */
+  var form=$('#projectForm'),btn=$('#submitBtn'),btnText=$('#btnText'),ok=$('#successMessage'),msg=$('#message'),cnt=$('#count');
+  msg.addEventListener('input',function(){cnt.textContent=msg.value.length+' / 3000'});
+
+  function validField(el){
+    var v=(el.value||'').trim(),good=true;
+    if(el.required&&!v)good=false;
+    if(good&&el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))good=false;
+    if(good&&el.id==='message'&&v.length<10)good=false;
+    el.closest('.field').classList.toggle('invalid',!good);
+    return good;
+  }
+  $$('input,select,textarea',form).forEach(function(el){
+    el.addEventListener('blur',function(){if(el.required)validField(el)});
+    el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))validField(el)});
+  });
+
+  function setLoading(on){btn.disabled=on;btn.classList.toggle('loading',on);btnText.textContent=on?'Sending…':'Send Project Enquiry →'}
+  function banner(text,isErr){ok.textContent=text;ok.classList.toggle('error',!!isErr);ok.classList.add('show')}
+
+  function mailtoFallback(d){
+    var body='Name: '+d.name+'\nCompany: '+d.company+'\nEmail: '+d.email+'\nPhone: '+d.phone+'\nProject Type: '+d.project+'\nLocation: '+d.location+'\n\n'+d.message;
+    window.location.href='mailto:globaltechmarketing.co@gmail.com?subject='+encodeURIComponent('Project Enquiry: '+d.project)+'&body='+encodeURIComponent(body);
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    ok.classList.remove('show');
+    var firstBad=null;
+    $$('input[required],select[required],textarea[required]',form).forEach(function(el){if(!validField(el)&&!firstBad)firstBad=el});
+    if(firstBad){firstBad.focus();showToast('Please fix the highlighted fields.');return}
+
+    var d={};
+    ['name','company','email','phone','project','location','message','website'].forEach(function(k){d[k]=(form.elements[k].value||'').trim()});
+    setLoading(true);
+
+    var ctl=('AbortController' in window)?new AbortController():null;
+    var to=setTimeout(function(){if(ctl)ctl.abort()},25000);
+    fetch(API_BASE+'/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d),signal:ctl?ctl.signal:undefined})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(j){return {ok:r.ok,status:r.status,j:j}})})
+      .then(function(res){
+        if(res.ok&&res.j.ok){
+          form.reset();cnt.textContent='0 / 3000';
+          banner('Thank you! Your enquiry has been sent'+(res.j.ref?' (Reference: '+res.j.ref+')':'')+'. A confirmation email is on its way to your inbox and we will reply within one business day.',false);
+          showToast('Enquiry sent successfully ✓');
+          ok.scrollIntoView({behavior:'smooth',block:'center'});
+        }else if(res.status===503||res.status===502){
+          banner('Our mail service is temporarily offline. Opening your email app so you can still reach us…',true);
+          setTimeout(function(){mailtoFallback(d)},1400);
+        }else{
+          banner((res.j&&res.j.error)||'Something went wrong. Please try again.',true);
+        }
+      })
+      .catch(function(){
+        banner('Network problem. Opening your email app so you can still reach us…',true);
+        setTimeout(function(){mailtoFallback(d)},1400);
+      })
+      .then(function(){clearTimeout(to);setLoading(false)});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdullah-2001/Global-tech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Abdullah-2001/Global-tech/issues"
+  },
+  "homepage": "https://github.com/Abdullah-2001/Global-tech#readme",
+  "dependencies": {
+    "nodemailer": "^10.3.0"
+  }
+}
