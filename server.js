@@ -371,10 +371,10 @@ function getTransporter() {
     transporter = CONFIG.dryRun
       ? nodemailer.createTransport({ jsonTransport: true })
       : nodemailer.createTransport({
-        host: 'smtp.gmail.com', port: 465, secure: true,
-        auth: { user: CONFIG.user, pass: CONFIG.pass },
-        pool: !ON_VERCEL, maxConnections: 2
-      });
+          host: 'smtp.gmail.com', port: 465, secure: true,
+          auth: { user: CONFIG.user, pass: CONFIG.pass },
+          pool: !ON_VERCEL, maxConnections: 2
+        });
   }
   return transporter;
 }
@@ -464,7 +464,8 @@ function handlePreview(url, res) {
 async function handler(req, res) {
   res.cors = corsFor(req);
   const url = req.url || '/';
-  const pathname = url.split('?')[0];
+  /* '/api/contact', '/api/contact/', '/contact' — teeno chalte hain (Vercel routing ke farq se bachne ke liye) */
+  const pathname = url.split('?')[0].replace(/\/+$/, '').replace(/^\/api(?=\/|$)/, '') || '/';
 
   /* sirf allowed website hi API use kar sakti hai (doosri sites ke forms block) */
   const origin = req.headers.origin;
@@ -474,7 +475,7 @@ async function handler(req, res) {
 
   if (req.method === 'OPTIONS') return send(res, 204, '');
 
-  if (pathname === '/api/contact') {
+  if (pathname === '/contact') {
     if (req.method === 'POST') {
       return handleContact(req, res).catch(e => {
         console.error('[server]', e); sendJSON(res, 500, { ok: false, error: 'Server error.' });
@@ -482,8 +483,8 @@ async function handler(req, res) {
     }
     return sendJSON(res, 405, { ok: false, error: 'Method not allowed.' });
   }
-  if (pathname === '/api/health') return sendJSON(res, 200, { ok: true, mail: mailReady(), dryRun: CONFIG.dryRun });
-  if (pathname === '/api/email-preview' && req.method === 'GET') return handlePreview(url, res);
+  if (pathname === '/health') return sendJSON(res, 200, { ok: true, mail: mailReady(), dryRun: CONFIG.dryRun });
+  if (pathname === '/email-preview' && req.method === 'GET') return handlePreview(url, res);
 
   return sendJSON(res, 404, { ok: false, error: 'Not found.' });
 }
@@ -492,15 +493,15 @@ export default handler;   /* Vercel serverless entry */
 
 /* Local server — Vercel par listen nahi hota */
 if (!ON_VERCEL) {
-  const server = http.createServer(handler);
-  server.listen(CONFIG.port, () => {
-    console.log('\n  ' + CONFIG.brand + ' Email API → http://localhost:' + CONFIG.port);
-    console.log('  Gmail: ' + (mailReady()
-      ? (CONFIG.dryRun ? 'DRY RUN (emails bheji nahi jayengi)' : 'READY (' + CONFIG.user + ' → ' + CONFIG.to + ')')
-      : 'NOT CONFIGURED (server.js ke CONFIG mein user + pass check karein, aur npm install chalayein)'));
-    if (!CONFIG.isProd) console.log('  Template preview: /api/email-preview?type=client  |  ?type=owner');
-    console.log('');
-  });
+const server = http.createServer(handler);
+server.listen(CONFIG.port, () => {
+  console.log('\n  ' + CONFIG.brand + ' Email API → http://localhost:' + CONFIG.port);
+  console.log('  Gmail: ' + (mailReady()
+    ? (CONFIG.dryRun ? 'DRY RUN (emails bheji nahi jayengi)' : 'READY (' + CONFIG.user + ' → ' + CONFIG.to + ')')
+    : 'NOT CONFIGURED (server.js ke CONFIG mein user + pass check karein, aur npm install chalayein)'));
+  if (!CONFIG.isProd) console.log('  Template preview: /api/email-preview?type=client  |  ?type=owner');
+  console.log('');
+});
 
-  process.on('SIGTERM', () => server.close(() => process.exit(0)));
+process.on('SIGTERM', () => server.close(() => process.exit(0)));
 }
